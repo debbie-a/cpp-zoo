@@ -12,7 +12,8 @@ class Animal
 public:
 	Animal(const std::string &name);
 	virtual ~Animal();
-
+	
+	virtual std::string getName() const;
 	virtual std::string getSpecies() const =0;
 	virtual unsigned short int getLifeExpectancy() const =0;
 	virtual std::string getContinents() const =0;
@@ -29,6 +30,10 @@ private:
 inline Animal::Animal(const std::string &name):m_name(name){}
 inline Animal::~Animal(){}
 
+inline std::string Animal::getName() const
+{
+	return m_name;
+}
 inline std::ostream& operator<< (std::ostream& os, const Animal& animal)
 {
     animal.print(os);
@@ -36,7 +41,7 @@ inline std::ostream& operator<< (std::ostream& os, const Animal& animal)
 }
 inline std::ostream& Animal::print(std::ostream &os) const
 {
-	os << "Name: " << m_name << std::endl;
+	os << "Name: " << getName() << std::endl;
 	os << "Species: " << getSpecies() << std::endl;
 	os << "Life Expectancy: " << getLifeExpectancy() << " years" << std::endl;
 	os << "Continents: " << getContinents() << std::endl;
