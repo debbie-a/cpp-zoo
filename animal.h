@@ -8,6 +8,7 @@ static const char *animalFood[] = {"fish", "nuts", "seeds","meat","fruit", "vege
 
 class Animal
 {
+	friend std::ostream & operator<<(std::ostream &os, const Animal &animal);
 public:
 	Animal(std::string name):m_name(name){}
 	virtual ~Animal(){}
@@ -16,7 +17,6 @@ public:
 	virtual std::string getContinents() const =0;
 	virtual std::string getFoodEats() const =0;
 	virtual unsigned short int getSpeed() const =0;
-	friend std::ostream & operator<<(std::ostream &os, const Animal &animal);
 
 protected:
 	virtual std::ostream& print(std::ostream& os) const;
