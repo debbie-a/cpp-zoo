@@ -5,7 +5,8 @@
 class Goose:public Birds
 {
 public:
-	Goose(std::string name):Birds(name){}
+	Goose(const std::string &name);
+
 	/*virtual*/std::string getSpecies() const;
 	/*virtual*/unsigned short int getLifeExpectancy() const;
 	/*virtual*/std::string getContinents() const;
@@ -26,6 +27,8 @@ private:
 	static const unsigned short int s_typicalHeightCanReach;
 	static const unsigned short int s_wingSpan;
 };
+
+inline Goose::Goose(const std::string &name):Birds(name){}
 
 inline std::string Goose::getSpecies() const
 {

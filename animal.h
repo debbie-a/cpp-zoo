@@ -10,8 +10,9 @@ class Animal
 {
 	friend std::ostream & operator<<(std::ostream &os, const Animal &animal);
 public:
-	Animal(std::string name):m_name(name){}
-	virtual ~Animal(){}
+	Animal(const std::string &name);
+	virtual ~Animal();
+
 	virtual std::string getSpecies() const =0;
 	virtual unsigned short int getLifeExpectancy() const =0;
 	virtual std::string getContinents() const =0;
@@ -24,6 +25,9 @@ protected:
 private:
 	std::string m_name;
 };
+
+inline Animal::Animal(const std::string &name):m_name(name){}
+inline Animal::~Animal(){}
 
 inline std::ostream& operator<< (std::ostream& os, const Animal& animal)
 {

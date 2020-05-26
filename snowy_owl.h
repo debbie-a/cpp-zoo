@@ -5,7 +5,8 @@
 class SnowyOwl:public Birds
 {
 public:
-	SnowyOwl(std::string name):Birds(name){}
+	SnowyOwl(const std::string &name);
+
 	/*virtual*/std::string getSpecies() const;
 	/*virtual*/unsigned short int getLifeExpectancy() const;
 	/*virtual*/std::string getContinents() const;
@@ -26,6 +27,8 @@ private:
 	static const unsigned short int s_typicalHeightCanReach;
 	static const unsigned short int s_wingSpan;
 };
+
+inline SnowyOwl::SnowyOwl(const std::string &name):Birds(name){}
 
 inline std::string SnowyOwl::getSpecies() const
 {

@@ -4,7 +4,8 @@
 class Dog: public Mammals
 {
 public:
-	Dog(std::string name):Mammals(name){}
+	Dog(const std::string &name);
+
 	/*virtual*/std::string getSpecies() const;
 	/*virtual*/unsigned short int getLifeExpectancy() const;
 	/*virtual*/std::string getContinents() const;
@@ -25,6 +26,9 @@ private:
 	static const unsigned short int s_pregnancyDuration;
 	static const unsigned short int s_numberOfYoungBorn;
 };
+
+inline Dog::Dog(const std::string &name):Mammals(name){}
+
 
 inline std::string Dog::getSpecies() const
 {

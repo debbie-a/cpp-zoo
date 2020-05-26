@@ -5,7 +5,8 @@
 class Lion:public Mammals
 {
 public:
-	Lion(std::string name):Mammals(name){}
+	Lion(const std::string &name);
+
 	/*virtual*/std::string getSpecies() const;
 	/*virtual*/unsigned short int getLifeExpectancy() const;
 	/*virtual*/std::string getContinents() const;
@@ -26,6 +27,8 @@ private:
 	static const unsigned short int s_pregnancyDuration;
 	static const unsigned short int s_numberOfYoungBorn;
 };
+
+inline Lion::Lion(const std::string &name):Mammals(name){}
 
 inline std::string Lion::getSpecies() const
 {

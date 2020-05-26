@@ -5,13 +5,17 @@
 class FishAndSeaCreatures: public Animal
 {
 public:
-	FishAndSeaCreatures(std::string name):Animal(name){}
-	~FishAndSeaCreatures(){}
+	FishAndSeaCreatures(const std::string &name);
+	~FishAndSeaCreatures();
+
 	virtual unsigned short int getLowestDepthCanReach() const=0;
 	
 protected:
 	/*virtual*/ std::ostream& print(std::ostream& os) const;
 };
+
+inline FishAndSeaCreatures::FishAndSeaCreatures(const std::string &name):Animal(name){}
+inline FishAndSeaCreatures::~FishAndSeaCreatures(){}
 
 inline std::ostream& FishAndSeaCreatures::print(std::ostream &os) const
 {

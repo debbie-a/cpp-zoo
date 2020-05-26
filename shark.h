@@ -5,7 +5,8 @@
 class Shark:public FishAndSeaCreatures
 {
 public:
-	Shark(std::string name):FishAndSeaCreatures(name){}
+	Shark(const std::string &name);
+
 	/*virtual*/std::string getSpecies() const;
 	/*virtual*/unsigned short int getLifeExpectancy() const;
 	/*virtual*/std::string getContinents() const;
@@ -25,6 +26,8 @@ private:
 	static const unsigned short int s_lowestDepthCanReach;
 	
 };
+
+inline Shark::Shark(const std::string &name):FishAndSeaCreatures(name){}
 
 inline std::string Shark::getSpecies() const
 {

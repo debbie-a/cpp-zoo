@@ -5,14 +5,18 @@
 class Birds: public Animal
 {
 public:
-	Birds(std::string name):Animal(name){}
-	~Birds(){}
+	Birds(const std::string &name);
+	~Birds();
+
 	virtual unsigned short int getTypicalHeightCanReach() const =0;
 	virtual unsigned short int getWingSpan() const =0;
 
 protected:
 	/*virtual*/ std::ostream& print(std::ostream& os) const;
 };
+
+inline Birds::Birds(const std::string &name):Animal(name){}
+inline Birds::~Birds(){}
 
 inline std::ostream& Birds::print(std::ostream &os) const
 {

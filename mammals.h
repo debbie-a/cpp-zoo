@@ -5,14 +5,18 @@
 class Mammals: public Animal
 {
 public:
-	Mammals(std::string name):Animal(name){}
-	~Mammals(){}
+	Mammals(const std::string &name);
+	~Mammals();
+
 	virtual unsigned short int getPregnancyDuration() const =0;
 	virtual unsigned short int getNumberOfYoungBorn() const =0;
 
 protected:
 	/*virtual*/ std::ostream& print(std::ostream& os) const;
 };
+
+inline Mammals::Mammals(const std::string &name):Animal(name){}
+inline Mammals::~Mammals(){}
 
 inline std::ostream& Mammals::print(std::ostream &os) const
 {
