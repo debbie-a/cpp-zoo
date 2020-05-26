@@ -2,7 +2,6 @@
 #define __ZOO_H__
 #include "animal.h"
 
-
 class Zoo
 {
 public:
