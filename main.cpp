@@ -6,7 +6,7 @@
 #include "dog.h"
 #include "shark.h"
 #include "clownfish.h"
-
+#include "whale.h"
 
 int main()
 {
@@ -19,6 +19,7 @@ int main()
 	Dog dog("Toto");
 	Shark shark("Jaws");
 	Clownfish clownfish("Nemo");
+    	Whale whale("Bandit");
 	Zoo zoo;
 	zoo.addAnimal(&lion1);
 	zoo.addAnimal(&lion2);
@@ -29,6 +30,8 @@ int main()
 	zoo.addAnimal(&dog);
 	zoo.addAnimal(&shark);
 	zoo.addAnimal(&clownfish);
+	zoo.addAnimal(&whale);
 	zoo.print();
+
 	return 0;
 }

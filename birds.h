@@ -1,14 +1,13 @@
 #ifndef __BIRDS_H__
 #define __BIRDS_H__
 #include "animal.h"
+#include "ibirds.h"
 
-class Birds: public Animal
+
+class Birds: public Animal, public Ibirds
 {
 public:
 	Birds(const std::string &name);
-
-	virtual unsigned short int getTypicalHeightCanReach() const =0;
-	virtual unsigned short int getWingSpan() const =0;
 
 protected:
 	/*virtual*/ std::ostream& print(std::ostream& os) const;
