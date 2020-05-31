@@ -8,6 +8,7 @@ class Whale: public Imammals, public FishAndSeaCreatures
 {
 public:
 	Whale(const std::string& name);
+
 	/*virtual*/ std::string getSpecies() const;
 	/*virtual*/ unsigned short int getLifeExpectancy() const;
 	/*virtual*/ const std::vector<CONTINENTS>& getContinents() const;
